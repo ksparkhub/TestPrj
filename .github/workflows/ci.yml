@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 예시 작업 실행
-        run: echo "수동으로 워크플로가 실행되었습니다."
+        run: echo " dev 수동으로 워크플로가 실행되었습니다."
