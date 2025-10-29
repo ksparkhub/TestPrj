@@ -1,37 +1,11 @@
-name: Spring Boot CI on dev Tag
+name: 수동 실행 워크플로 예시
 
-# 'dev-'로 시작하는 태그를 push할 때 워크플로우를 실행합니다. (예: dev-v1.0)
 on:
-  push:
-    tags:
-      - 'dev-**'
+  workflow_dispatch:
 
 jobs:
-  build:
+  my_manual_job:
     runs-on: ubuntu-latest
-
     steps:
-    # 1. 소스 코드를 체크아웃합니다.
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    # 2. JDK 17 환경을 설정합니다.
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-
-    # 3. Maven Wrapper에 실행 권한을 부여합니다.
-    - name: Grant execute permission for mvnw
-      run: chmod +x ./mvnw
-
-    # 4. 'dev' 프로필을 활성화하여 Maven으로 빌드합니다.
-    - name: Build with Maven
-      env:
-        # GitHub Secret을 OS 환경 변수로 설정합니다.
-        # 이 변수들을 pom.xml이 ${env.DB_URL_DEV} 형태로 읽어갑니다.
-        DB_URL_DEV: ${{ secrets.DB_URL_DEV }}
-        DB_USERNAME_DEV: ${{ secrets.DB_USERNAME_DEV }}
-        DB_PASSWORD_DEV: ${{ secrets.DB_PASSWORD_DEV }}
-      run: ./mvnw clean package -Dspring.profiles.active=dev
+      - name: 예시 작업 실행
+        run: echo "수동으로 워크플로가 실행되었습니다."
