@@ -1,4 +1,4 @@
-name: 수동 실행 워크플로 예시
+name: 수동 실행 워크플로 예시 dev
 
 on:
   workflow_dispatch:
