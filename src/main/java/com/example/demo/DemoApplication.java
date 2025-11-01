@@ -8,6 +8,7 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		//test
+		//compare
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
