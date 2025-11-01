@@ -10,6 +10,7 @@ public class DemoApplication {
 		//test
 		//compare
 		//merge test
+		//병합 테스트
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
